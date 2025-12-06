@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Estate – Getting Started</title>
+
+<link rel="stylesheet" href="../CSS/scratch.css">
+</head>
+
+<body class="scratch-bg" id="top">
+<!-- Navbar -->
+
+<nav>
+    <a href="../index.html">Home</a>
+    <a class="nav-link py-3 px-0 px-lg-3 rounded" href="scratch.html">Real Estate</a>
+    <a href="ai.html">Quiz</a>
+    <a href="#basics">Basics</a>
+    <a href="#image-section">Example Property</a>
+    <a href="#youtube-section">Video</a>
+    <a href="#tableau-section">Tableau</a>
+</nav>
+
+<h1>How to Get Started in Real Estate</h1>
+<p>This page covers foundational steps for beginners entering the real estate world.</p>
+
+<!-- Anchor Section -->
+<h2 id="basics">Real Estate Basics</h2>
+
+<div class="section-box">
+    <p>Here is a required list containing another list inside it:</p>
+    <ol>
+        <li>Steps to Start:
+            <ul>
+                <li>Choose a real estate niche</li>
+                <li>Learn local market conditions</li>
+                <li>Save money for investing or licensing</li>
+            </ul>
+        </li>
+        <li>What You Need:
+            <ul>
+                <li>Capital or financing</li>
+                <li>Market knowledge</li>
+                <li>Networking skills</li>
+            </ul>
+        </li>
+    </ol>
+</div>
+
+<!-- Image Section -->
+<div class="section-box-2" id="image-section">
+    <h2>Real Estate Example Property</h2>
+    <img src="../assests/building.jpg" alt="Real estate house example" width="350">
+</div>
+
+<!-- YouTube Embed Section -->
+<div class="section-box-3" id="youtube-section">
+    <h2>YouTube: How to Get Started in Real Estate</h2>
+    <iframe width="560" height="315"
+            src="https://www.youtube.com/embed/O5cROx7Thyc?si=w76fEoynL8kBGbdE"
+            title="Real Estate Video" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+    </iframe>
+</div>
+
+<!-- Tableau Embed Section -->
+<div class="tableau-container" id="tableau-section">
+    <h2>Tableau Visualization</h2>
+    <p><strong>Interactive Tableau Dashboard:</strong></p>
+
+    <div class='tableauPlaceholder' id='viz1764884056767'>
+        <noscript>
+            <a href='#'>
+                <img alt=' '
+                     src='https://public.tableau.com/static/images/Su/SupervisedRealEstateAcrosstheUnitedStatesREXUSInventoryBuilding/StatewiseOwnedLeasedhouseofyear2014/1.png' width="100%"
+                     style='border: none;' />
+            </a>
+        </noscript>
+
+        <object class='tableauViz' style='display:none;'>
+            <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+            <param name='embed_code_version' value='3' />
+            <param name='site_root' value='' />
+            <param name='name' value='SupervisedRealEstateAcrosstheUnitedStatesREXUSInventoryBuilding/StatewiseOwnedLeasedhouseofyear2014' />
+            <param name='tabs' value='yes' />
+            <param name='toolbar' value='yes' />
+        </object>
+    </div>
+</div>
+
+<script src="https://public.tableau.com/javascripts/api/viz_v1.js"></script>
+
+<script>
+    function fixTableauSize() {
+        const iframes = document.querySelectorAll(".tableau-container iframe");
+        if (iframes.length === 0) return;
+
+        iframes.forEach(iframe => {
+            iframe.style.width = "560px";
+            iframe.style.height = "315px";
+        });
+    }
+
+    window.addEventListener("load", () => {
+        setTimeout(fixTableauSize, 1200); 
+    });
+
+    window.addEventListener("resize", fixTableauSize);
+
+    function resizeViz() {
+        const container = document.getElementById('viz1764884056767');
+        const iframe = container.getElementsByTagName('iframe')[0];
+        if (!iframe) return;
+
+        const width = container.offsetWidth;
+        iframe.style.width = width + "px";
+        iframe.style.height = (width * 0.75) + "px";
+    }
+
+    window.addEventListener("load", () => setTimeout(resizeViz, 800));
+    window.addEventListener("resize", resizeViz);
+</script>
+
+<br>
+<a href="#top">Back to Top</a>
+
+</body>
+</html>
+

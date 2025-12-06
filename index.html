@@ -1,0 +1,431 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>Professional Resume – Spencer Madsen</title>
+
+    <link rel="icon" type="image/x-icon" href="assests/favicon.ico" />
+
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+
+    <style>
+    /* -------------------------------------------------------
+        BASE STYLES & NAVBAR
+    ----------------------------------------------------------*/
+    body {
+        background-color: #f4f8fc;
+        font-family: 'Lato', sans-serif;
+    }
+
+    /* Hide broken favicon */
+    link[rel="icon"] {
+        display: none !important;
+    }
+
+    /* Nav Bar Styles (Forced dark color and correct alignment) */
+    #mainNav {
+        background-color: #2c3e50 !important; /* Dark Blue/Gray */
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+    
+    /* Nav bar brand name forced to the left */
+    .navbar-brand {
+        margin-right: auto !important; /* Forces the brand to the far left */
+    }
+    .navbar-brand, .nav-link {
+        color: white !important;
+        font-weight: 700;
+        letter-spacing: 0.0625em;
+    }
+    .nav-link:hover {
+        color: #1abc9c !important; /* Teal/Green hover color */
+    }
+
+    /* -------------------------------------------------------
+        HERO SECTION (MASTHEAD)
+    ----------------------------------------------------------*/
+
+    #masthead {
+        background-image: url('assests/Ocean.jpg');
+        background-size: cover;
+        background-position: center top;
+        color: white;
+        padding: 80px 20px 60px 20px;
+        position: relative;
+        text-align: center;
+        min-height: 65vh; 
+    }
+
+    #masthead::before {
+        content: "";
+        position: absolute;
+        top:0; left:0;
+        width: 100%; height: 100%;
+        background: rgba(0,0,0,0.45);
+        z-index: 0;
+    }
+
+    #masthead * {
+        position: relative;
+        z-index: 1;
+    }
+
+    /* INCREASED SIZE AND STYLING FOR PROFILE PICTURE */
+    .masthead-avatar {
+        width: 260px; /* Increased size */
+        height: 260px;
+        object-fit: cover;
+        border-radius: 50%;
+        border: 5px solid rgba(255,255,255,0.7); 
+        box-shadow: 0 0 20px rgba(0,0,0,0.4); 
+        margin-top: 25px; 
+        margin-bottom: 25px;
+    }
+    
+    /* Divider Styles */
+    .divider-custom-line {
+        background-color: #2c3e50; 
+        height: 0.25rem;
+        border-radius: 1rem;
+    }
+    .divider-custom-icon {
+        color: #2c3e50;
+    }
+    .divider-light .divider-custom-line {
+        background-color: white !important;
+    }
+    .divider-light .divider-custom-icon {
+        color: white !important;
+    }
+
+    /* -------------------------------------------------------
+        ABOUT SECTION (TEAL/GREEN, TIGHTER TEXT BLOCK)
+    ----------------------------------------------------------*/
+    #about {
+        background-color: #1abc9c !important; /* Teal/Green */
+        color: white !important;
+        text-align: center;
+        padding: 5rem 0;
+    }
+
+    /* TIGHTER Text centering container for About Me text */
+    #about .about-text-container {
+        max-width: 650px; 
+        margin: 0 auto;
+    }
+
+    #about h2 {
+        color: white !important; 
+    }
+
+    #about .divider-custom-line {
+        background-color: white !important;
+    }
+
+    /* -------------------------------------------------------
+        RESUME SECTION (LIGHT BLUE, CENTERED, STRAIGHT EDGES, NO STAR)
+    ----------------------------------------------------------*/
+    #resume {
+        background-color: #f4f8fc; 
+        padding: 5rem 0;
+        text-align: center;
+    }
+    
+    /* REMOVE STAR DIVIDER FROM RESUME SECTION */
+    #resume .divider-custom {
+        display: none;
+    }
+    
+    #resume h2 {
+        margin-bottom: 30px; 
+    }
+
+    /* This class centers the content blocks (Education, Experience, etc.) */
+    .resume-content {
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: left;
+        padding: 0 15px;
+    }
+    
+    /* Forces alignment of list items to be straight */
+    .resume-content ul {
+        list-style-position: outside; 
+        padding-left: 0 !important; 
+        margin-left: 20px; 
+    }
+    
+    .resume-content ul li {
+        margin-left: 0; 
+        margin-bottom: 5px;
+    }
+    
+    .resume-content ul.two-column {
+        padding-left: 20px !important; 
+    }
+
+    #resume h4 {
+        margin-top: 30px;
+        margin-bottom: 15px;
+        font-weight: 700;
+        color: #2c3e50;
+    }
+
+    .two-column {
+        columns: 2;
+        column-gap: 40px;
+    }
+
+    /* -------------------------------------------------------
+        FOOTER & RESPONSIVE
+    ----------------------------------------------------------*/
+
+    footer {
+        background: white;
+        border-top: 1px solid #d8d8d8;
+    }
+
+    footer p {
+        color: #666;
+        font-size: 0.95rem;
+    }
+
+    @media (max-width: 992px) {
+        /* On smaller screens, allow the navbar to collapse for mobile view */
+        #mainNav .container {
+            flex-wrap: wrap; 
+        }
+        #mainNav .navbar-nav {
+            /* Keep links visible on large screens, but hidden for mobile */
+            display: none !important; 
+        }
+    }
+    /* Mobile-specific changes */
+    @media (max-width: 768px) {
+        .two-column {
+            columns: 1;
+        }
+        #masthead {
+            min-height: 50vh;
+            padding-top: 110px;
+        }
+    }
+    </style>
+</head>
+
+<body id="page-top">
+
+<nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
+    <div class="container d-flex">
+        <a class="navbar-brand" href="index.html">SPENCER MADSEN</a>
+        
+        <ul class="navbar-nav d-flex flex-row">
+            <li class="nav-item mx-0 mx-lg-1">
+                <a class="nav-link py-3 px-0 px-lg-3 rounded" href="#about">ABOUT</a>
+            </li>
+            <li class="nav-item mx-0 mx-lg-1">
+                <a class="nav-link py-3 px-0 px-lg-3 rounded" href="#resume">RÉSUMÉ</a>
+            </li>
+            <li class="nav-item mx-0 mx-lg-1">
+                <a class="nav-link py-3 px-0 px-lg-3 rounded" href="html/scratch.html">SCRATCH</a>
+            </li>
+            <li class="nav-item mx-0 mx-lg-1">
+                <a class="nav-link py-3 px-0 px-lg-3 rounded" href="html/ai.html">QUIZ</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<header class="masthead text-center text-white" id="masthead">
+    <div class="container d-flex align-items-center flex-column">
+        <h1 class="masthead-heading text-uppercase mb-0">Spencer Madsen</h1>
+        
+        <div class="divider-custom divider-light">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+            <div class="divider-custom-line"></div>
+        </div>
+        
+        <img class="masthead-avatar rounded-circle" src="assests/myface.jpg" alt="Spencer Madsen" />
+        
+        <p class="masthead-subheading font-weight-light mb-0">Student • Builder • Communicator • Future Professional</p>
+    </div>
+</header>
+
+<section class="page-section text-white mb-0" id="about">
+    <div class="container">
+        <h2 class="page-section-heading text-center text-uppercase text-white">ABOUT ME</h2>
+        <div class="divider-custom divider-light">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+            <div class="divider-custom-line"></div>
+        </div>
+
+        <div class="row justify-content-center"> 
+            <div class="col-12 text-center">
+                <div class="about-text-container">
+                    <p class="lead">
+                        I am a sophomore at Brigham Young University (BYU) Provo, passionate about
+                        building, analyzing, and creating meaningful things. I have strong experience
+                        in leadership, communication, Excel, and technology gained as a missionary
+                        and student. I am fluent in Spanish and enjoy working with people, explaining
+                        ideas, and solving problems.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="page-section portfolio" id="resume">
+    <div class="container">
+        <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">RÉSUMÉ</h2>
+        
+        <div class="resume-content">
+            <div class="mb-5">
+                <h4 class="fw-bold">Education</h4>
+                
+                <div class="mb-3">
+                    <strong>Brigham Young University</strong> — Undergraduate Coursework
+                    <br>Provo, UT | August 2022 – April 2023
+                    <ul>
+                        <li>Completed one year of college coursework with a 4.0 GPA.</li>
+                        <li>Early admission following accelerated high school graduation.</li>
+                    </ul>
+                </div>
+                
+                <div class="mb-3">
+                    <strong>West Albany High School</strong> — High School Diploma with Honors
+                    <br>Albany, OR | Graduated June 2022
+                    <ul>
+                        <li>GPA: 4.0 | Completed 5 AP courses.</li>
+                        <li>Graduated early after junior year with high academic distinction.</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="mb-5">
+                <h4 class="fw-bold">Experience</h4>
+                
+                <div class="mb-3">
+                    <strong>Missionary & Community Organizer</strong>
+                    <br>The Church of Jesus Christ of Latter-day Saints | Nicaragua | 2023 – 2025
+                    <ul>
+                        <li>Led missionary teams and organized community outreach initiatives.</li>
+                        <li>Delivered public lessons and personalized mentorship in Spanish.</li>
+                        <li>Developed strong leadership, cross-cultural, and interpersonal communication skills.</li>
+                    </ul>
+                </div>
+
+                <div class="mb-3">
+                    <strong>Volunteer Educator & Cultural Program Leader</strong>
+                    <br>World in Us Nonprofit | Summers 2021 & 2022
+                    <ul>
+                        <li>Designed and led educational workshops at the Boys & Girls Club, teaching youth from diverse backgrounds about world cultures.</li>
+                        <li>Created interactive lessons promoting cultural appreciation, inclusion, and global understanding.</li>
+                        <li>Facilitated group discussions and activities, helping students explore values of respect, diversity, and shared humanity.</li>
+                    </ul>
+                </div>
+
+                <div class="mb-3">
+                    <strong>Eagle Scout & Troop Leader</strong>
+                    <br>Scouts BSA | 2020 – 2022
+                    <ul>
+                        <li>Earned the rank of Eagle Scout through completion of a community-focused service project.</li>
+                        <li>Led and mentored younger scouts, organized events, and demonstrated responsibility, teamwork, and leadership.</li>
+                        <li>Honed outdoor survival skills, problem-solving, and character development through hands-on experience.</li>
+                    </ul>
+                </div>
+
+                <div class="mb-3">
+                    <strong>ASE Research Intern – Computer Science</strong>
+                    <br>Oregon State University | Summer 2020
+                    <ul>
+                        <li>Co-authored a research paper for the Gen-MAG project in genomics and machine learning.</li>
+                        <li>Assisted graduate students with dataset preparation and research workflow.</li>
+                        <li>Gained hands-on experience in academic collaboration and technical research.</li>
+                    </ul>
+                </div>
+
+                <div class="mb-3">
+                    <strong>Lifeguard</strong>
+                    <br>Albany Community Pool & Tennis Club | Summers 2021 – 2023
+                    <ul>
+                        <li>Ensured swimmer safety, enforced regulations, and responded to emergencies.</li>
+                        <li>Maintained cleanliness and operational standards of pool facilities.</li>
+                    </ul>
+                </div>
+
+                <div class="mb-3">
+                    <strong>Amazon Warehouse Associate</strong>
+                    <br>Amazon | Summer 2023
+                    <ul>
+                        <li>Unloaded delivery trucks and sorted packages to ensure timely order fulfillment.</li>
+                        <li>Maintained a high-paced workflow with accuracy and attention to detail.</li>
+                    </ul>
+                </div>
+
+                <div class="mb-3">
+                    <strong>Volunteer Medical Assistant</strong>
+                    <br>Humanitarian Eye Clinic | Nicaragua | July 2025
+                    <ul>
+                        <li>Assisted in pre-operative procedures and patient care for individuals receiving eye surgeries.</li>
+                        <li>Supported clinic operations and provided post-op support during a week-long mission.</li>
+                    </ul>
+                </div>
+
+            </div>
+            
+            <div class="mb-5">
+                <h4 class="fw-bold">Student Leadership</h4>
+                <div class="mb-3">
+                    <strong>West Albany High School & Brigham Young University</strong> | 2021 – 2023
+                    <ul>
+                        <li>Served as Junior Class President and created student engagement campaigns.</li>
+                        <li>Led development of a campus activity website at BYU to increase event visibility.</li>
+                        <li>Founded a high school investment club to promote financial literacy among students.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mb-5">
+                <h4 class="fw-bold">Skills</h4>
+                <ul class="two-column">
+                    <li>**Languages:** Fluent in English and Spanish</li>
+                    <li>**Technical Tools:** Microsoft Excel, Canva, basic Python</li>
+                    <li>**Leadership & Communication:** Team leadership, public speaking, cross-cultural communication, event planning</li>
+                    <li>**Initiative & Strategy:** Club founder, financial literacy advocate, student engagement strategist</li>
+                </ul>
+            </div>
+            
+            <div class="mb-5">
+                <h4 class="fw-bold">Awards & Honors</h4>
+                <ul>
+                    <li>Mission Leadership Roles</li>
+                    <li>Eagle Scout Rank</li>
+                    <li>High School Diploma with Honors (4.0 GPA)</li>
+                    <li>Completed College Coursework with a 4.0 GPA</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="footer text-center py-4">
+    <div class="container">
+        <p class="text-muted mb-0">© 2025 Spencer Madsen — All Rights Reserved</p>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+<script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+
+</body>
+</html>

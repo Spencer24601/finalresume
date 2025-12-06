@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stormlight User Quiz</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f6f9fc;
+            color: #333;
+        }
+
+        /* Navbar styles */
+        nav {
+            position: fixed;
+            top: 10px;
+            right: 20px;
+            font-weight: bold;
+            background: rgba(255,255,255,0.9);
+            padding: 5px 10px;
+            border-radius: 5px;
+            z-index: 1000;
+        }
+
+        nav a {
+            margin-right: 10px;
+            text-decoration: none;
+            color: #111827;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        header {
+            background: #111827;
+            color: white;
+            padding: 40px;
+            text-align: center;
+            margin-top: 60px; /* Push content below navbar */
+        }
+
+        header h1 {
+            font-size: 48px;
+            margin: 0;
+        }
+
+        header p {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+
+        .container {
+            width: 85%;
+            max-width: 900px;
+            margin: 40px auto;
+        }
+
+        .quiz-question {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            margin-bottom: 25px;
+        }
+
+        .quiz-question h2 {
+            color: #111827;
+            margin-bottom: 10px;
+        }
+
+        label {
+            display: block;
+            margin: 8px 0;
+            cursor: pointer;
+        }
+
+        .submit-btn {
+            display: block;
+            width: fit-content;
+            margin: 40px auto;
+            padding: 15px 30px;
+            background: #4f46e5;
+            color: white;
+            font-size: 20px;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .result {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .footer {
+            background: #111827;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav>
+        <a href="../index.html">Home</a>
+        <a class="nav-link py-3 px-0 px-lg-3 rounded" href="scratch.html">Real Estate</a>
+        <a href="ai.html">Quiz</a>
+    </nav>
+
+    <!-- HEADER -->
+    <header>
+        <h1>Which Stormlight User Are You?</h1>
+        <p>Discover your Radiant order with this 10-question quiz!</p>
+    </header>
+
+    <div class="container" id="quiz-container">
+        <!-- Quiz questions will go here -->
+    </div>
+
+    <button class="submit-btn" onclick="calculateResult()">See Your Result</button>
+    <div class="result" id="result"></div>
+
+    <div class="footer">
+        © 2025 Stormlight Quiz — Powered by your imagination.
+    </div>
+
+    <script>
+        const questions = [
+            {
+                question: "1. How do you approach challenges?",
+                options: [
+                    { text: "With strategy and careful planning", type: "Willshaper" },
+                    { text: "With compassion and understanding", type: "Edgedancer" },
+                    { text: "By protecting those around me", type: "Bondsmith" },
+                    { text: "Through strength and determination", type: "Skybreaker" }
+                ]
+            },
+            {
+                question: "2. Your friends would describe you as:",
+                options: [
+                    { text: "Clever and analytical", type: "Truthwatcher" },
+                    { text: "Kind and empathetic", type: "Edgedancer" },
+                    { text: "Loyal and protective", type: "Bondsmith" },
+                    { text: "Strong-willed and disciplined", type: "Skybreaker" }
+                ]
+            },
+            {
+                question: "3. Choose a preferred weapon:",
+                options: [
+                    { text: "Sword", type: "Willshaper" },
+                    { text: "Staff", type: "Edgedancer" },
+                    { text: "Shield", type: "Bondsmith" },
+                    { text: "Blade of Justice", type: "Skybreaker" }
+                ]
+            },
+            {
+                question: "4. Your ideal environment is:",
+                options: [
+                    { text: "Open battlefield", type: "Willshaper" },
+                    { text: "Peaceful garden", type: "Edgedancer" },
+                    { text: "City or community center", type: "Bondsmith" },
+                    { text: "Training grounds or strict order", type: "Skybreaker" }
+                ]
+            },
+            {
+                question: "5. What motivates you the most?",
+                options: [
+                    { text: "Adventure and exploration", type: "Willshaper" },
+                    { text: "Helping others grow", type: "Edgedancer" },
+                    { text: "Uniting and protecting people", type: "Bondsmith" },
+                    { text: "Justice and enforcing rules", type: "Skybreaker" }
+                ]
+            },
+            {
+                question: "6. Choose a personal trait:",
+                options: [
+                    { text: "Creativity", type: "Willshaper" },
+                    { text: "Empathy", type: "Edgedancer" },
+                    { text: "Leadership", type: "Bondsmith" },
+                    { text: "Discipline", type: "Skybreaker" }
+                ]
+            },
+            {
+                question: "7. How do you handle conflict?",
+                options: [
+                    { text: "Think outside the box", type: "Willshaper" },
+                    { text: "Seek compromise", type: "Edgedancer" },
+                    { text: "Protect everyone involved", type: "Bondsmith" },
+                    { text: "Follow the rules strictly", type: "Skybreaker" }
+                ]
+            },
+            {
+                question: "8. Pick a magical ability:",
+                options: [
+                    { text: "Enhanced speed and agility", type: "Willshaper" },
+                    { text: "Healing and restoration", type: "Edgedancer" },
+                    { text: "Bonding and influence", type: "Bondsmith" },
+                    { text: "Law enforcement powers", type: "Skybreaker" }
+                ]
+            },
+            {
+                question: "9. Your favorite pastime:",
+                options: [
+                    { text: "Exploring new places", type: "Willshaper" },
+                    { text: "Helping friends and community", type: "Edgedancer" },
+                    { text: "Leading and organizing events", type: "Bondsmith" },
+                    { text: "Training and perfecting skills", type: "Skybreaker" }
+                ]
+            },
+            {
+                question: "10. Choose a guiding principle:",
+                options: [
+                    { text: "Freedom", type: "Willshaper" },
+                    { text: "Compassion", type: "Edgedancer" },
+                    { text: "Unity", type: "Bondsmith" },
+                    { text: "Justice", type: "Skybreaker" }
+                ]
+            }
+        ];
+
+        const quizContainer = document.getElementById("quiz-container");
+
+        // Generate quiz HTML
+        questions.forEach((q, index) => {
+            const div = document.createElement("div");
+            div.classList.add("quiz-question");
+
+            let optionsHtml = "";
+            q.options.forEach((opt, i) => {
+                optionsHtml += `<label><input type="radio" name="q${index}" value="${opt.type}"> ${opt.text}</label>`;
+            });
+
+            div.innerHTML = `<h2>${q.question}</h2>${optionsHtml}`;
+            quizContainer.appendChild(div);
+        });
+
+        function calculateResult() {
+            const answers = {};
+            questions.forEach((q, i) => {
+                const selected = document.querySelector(`input[name="q${i}"]:checked`);
+                if (selected) {
+                    const type = selected.value;
+                    answers[type] = (answers[type] || 0) + 1;
+                }
+            });
+
+            let highestScore = 0;
+            let resultType = "";
+            for (const type in answers) {
+                if (answers[type] > highestScore) {
+                    highestScore = answers[type];
+                    resultType = type;
+                }
+            }
+
+            const resultDiv = document.getElementById("result");
+            if (resultType) {
+                resultDiv.textContent = `You are a ${resultType}!`;
+            } else {
+                resultDiv.textContent = "Please answer all questions before submitting.";
+            }
+        }
+    </script>
+</body>
+</html>

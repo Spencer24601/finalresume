@@ -1,0 +1,166 @@
+/* ---------- GLOBAL STYLES ---------- */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #e0f2ff; /* light blue across all pages */
+    color: #333;
+}
+
+/* ---------- SCRATCH PAGE STYLES ---------- */
+.scratch-bg {
+    background-color: #f8f8f8;
+    background-image: url('https://images.unsplash.com/photo-1560185008-a54e9c39a6e6');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.scratch-nav a {
+    margin-right: 10px;
+    font-weight: bold;
+    color: black;
+}
+
+/* Light green background and center everything */
+body.scratch-bg {
+    background-color: #d4f5d4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 80px; /* offset for fixed navbar */
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+}
+
+h1, h2, p, ol, ul {
+    max-width: 800px;
+    margin: 10px auto;
+}
+
+.section-box, .section-box-2, .section-box-3 {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 10px;
+    max-width: 850px;
+}
+
+img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+iframe {
+    display: block;
+    margin: 20px auto;
+    max-width: 100%;
+}
+
+a {
+    color: #006600;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Fixed navbar styling */
+nav {
+    position: fixed;
+    top: 10px;
+    right: 20px;
+    font-weight: bold;
+    background: rgba(255,255,255,0.9);
+    padding: 5px 10px;
+    border-radius: 5px;
+    z-index: 1000;
+}
+
+nav a {
+    margin-right: 10px;
+}
+
+/* Tableau container */
+.tableau-container {
+    max-width: 1000px;
+    margin: 20px auto;
+    background: rgba(255,255,255,0.9);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+
+/* ---------- SECTION BOXES ---------- */
+.section-box,
+.section-box-2,
+.section-box-3 {
+    background: white;
+    padding: 15px;
+    margin: 20px 0;
+    border: 1px solid #ddd;
+}
+
+.section-box-2 {
+    background: #f2f2f2;
+}
+
+.section-box-3 {
+    background: #e9e9e9;
+}
+
+/* ---------- TABLEAU PLACEHOLDER ---------- */
+
+
+.tableau-container {
+    max-width: 850px;   /* EXACT same width as your YouTube card */
+    margin: 20px auto;
+    background: rgba(255,255,255,0.9);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.tableau-container iframe,
+.tableau-container object {
+    width: 100% !important;
+    height: 700px !important; /* nice size, adjust if needed */
+}
+
+
+
+
+    
+
+/* ---------- RESUME PAGE STYLES ---------- */
+.about-me {
+    background-image: url('images/myface.jpg'); /* your field image */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: white;
+    padding: 80px 20px;
+    text-align: center;
+    position: relative;
+}
+
+/* Optional overlay for readability */
+.about-me::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.3); /* semi-transparent overlay */
+    z-index: 0;
+}
+
+.about-me * {
+    position: relative;
+    z-index: 1;
+}
+
